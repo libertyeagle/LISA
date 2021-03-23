@@ -1,0 +1,25 @@
+{
+  "model_config": {
+    "embedding_dim": 128,
+    "num_attention_encoder_layers": 1,
+    "num_attention_encoder_heads": 1,
+    "dropout": 0.1,
+    "positional_embedding": true,
+    "normalize_input_seq": false,
+    "dropout_input_seq": true,
+    "max_seq_len": 300
+  },
+  "training_config": {
+    "loss_function": "BinaryCELoss",
+    "loss_config": {},
+    "learning_rate": 0.001,
+    "batch_size": 128,
+    "num_negative_samples": 1,
+    "num_epochs": 200,
+    "num_dataloader_workers": 2,
+    "exclude_positive_in_negative_sampling": false
+  },
+  "eval_config": {
+    "batch_size": 64
+  }
+}

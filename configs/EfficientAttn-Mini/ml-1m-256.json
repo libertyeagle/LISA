@@ -1,0 +1,41 @@
+{
+  "model_config": {
+    "embedding_dim": 128,
+    "dropout": 0.1,
+    "normalize_input_seq": false,
+    "dropout_input_seq": true,
+    "max_seq_len": 300,
+    "project_qk_in_attention": true,
+    "project_v_in_attention": true,
+    "using_separate_qkv_projection_weights": true,
+    "attention_positional_embedding": "counts_decay",
+    "counts_decay_factor": 0.1,
+    "input_seq_positional_embedding": true,
+    "disallow_query_self_attention": false,
+    "target_num_codebooks": 8,
+    "target_num_codewords": 128,
+    "product_quantization_config": {
+      "num_codebooks": 8,
+      "num_codewords": 32,
+      "softmax_temperature": 0.7,
+      "similarity_metric": "bilinear",
+      "softmax_batch_norm": false,
+      "recurrent_encoding": true,
+      "inputs_optimize_loss_coefficient": 0.0
+    }
+  },
+  "training_config": {
+    "loss_function": "BinaryCELoss",
+    "loss_config": {},
+    "learning_rate": 0.001,
+    "batch_size": 128,
+    "num_negative_samples": 1,
+    "num_epochs": 200,
+    "num_dataloader_workers": 2,
+    "exclude_positive_in_negative_sampling": false,
+    "initial_num_batches_to_continuously_update_ip_table": -1
+  },
+  "eval_config": {
+    "batch_size": 32
+  }
+}
